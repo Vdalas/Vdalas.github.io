@@ -33,7 +33,7 @@
             <div class="question-container">
 
                 <!-- Вопросы викторины -->
-                <div class="question">1. Яке основне завдання менеджменту в компанії?</div>
+                <div class="question">1. Яке основне завдання менеджменту в організації?</div>
                 <ul class="options">
                     <li><input type="radio" name="q1" value="0"> Створювати багато правил</li>
                     <li><input type="radio" name="q1" value="1"> Планування, організація, мотивація, контроль</li>
@@ -93,7 +93,7 @@
                 <ul class="options">
                     <li><input type="radio" name="q9" value="0"> Сильні сторони співробітників</li>
                     <li><input type="radio" name="q9" value="0"> Нова лінійка продуктів</li>
-                    <li><input type="radio" name="q9" value="1"> Посилення конкурентів</li>
+                    <li><input type="radio" name="q9" value="1"> Посилення конкуренції</li>
                 </ul>
 
                 <div class="question">10. Як ви опишете ідеального менеджера?</div>
@@ -103,6 +103,41 @@
                     <li><input type="radio" name="q10" value="0"> Не звертає увагу на проблеми команди</li>
                 </ul>
 
+                <div class="question">11. Організація це:</div>
+                <ul class="options">
+                    <li><input type="radio" name="q11" value="0"> Група людей, які звільнені з роботи</li>
+                    <li><input type="radio" name="q11" value="1"> Група людей, діяльність яких координуеться досягненням певної мети </li>
+                    <li><input type="radio" name="q11" value="0"> Група людей, які чекають на Охтирське пиво</li>
+                </ul>
+				
+				<div class="question">12. Організації бувають:</div>
+                <ul class="options">
+                    <li><input type="radio" name="q12" value="0"> Формально неформальні</li>
+                    <li><input type="radio" name="q12" value="0"> Неформально неадекватні</li>
+                    <li><input type="radio" name="q12" value="1"> Формальні і неформальні</li>
+                </ul>
+				
+				<div class="question">13. За ступенем складності організації бувають:</div>
+                <ul class="options">
+                    <li><input type="radio" name="q13" value="0"> Складні та не дуже</li>
+                    <li><input type="radio" name="q13" value="1"> Складні та нескладні</li>
+                    <li><input type="radio" name="q13" value="0"> Формально складні</li>
+                </ul>
+				
+				<div class="question">14. Які з організацій не відноситься до закритого типу?</div>
+                <ul class="options">
+                    <li><input type="radio" name="q14" value="0"> Релігійна</li>
+                    <li><input type="radio" name="q14" value="0"> В'язниці</li>
+                    <li><input type="radio" name="q14" value="1"> Анонімних алкоголіков</li>
+                </ul>
+				
+				<div class="question">15. Основою схеми взаімодії є:</div>
+                <ul class="options">
+                    <li><input type="radio" name="q15" value="0"> Персонал, Культура, Техноголія</li>
+                    <li><input type="radio" name="q15" value="1"> Місія, Мета, Цілі</li>
+                    <li><input type="radio" name="q15" value="0"> Структура, фінанси, Процеси</li>
+                </ul>
+				
                 <button onclick="submitQuiz()">Завершити тест</button>
                 <div class="result" id="result"></div>
             </div>
@@ -120,7 +155,12 @@
             q7: "1",
             q8: "1",
             q9: "1",
-            q10: "1"
+			q10: "1",
+			q11: "1",
+			q12: "1",
+			q13: "1",
+			q14: "1",
+            q15: "1"
         };
 
         function startQuiz() {
@@ -163,14 +203,14 @@
             results.push({ name, score });
             localStorage.setItem("quizResults", JSON.stringify(results));
 
-            document.getElementById('result').innerText = `Ваш результат: ${score} з 10`;
+            document.getElementById('result').innerText = `Ваш результат: ${score} з 15`;
         }
 
         function showAllResults() {
             const results = JSON.parse(localStorage.getItem("quizResults") || "[]");
             let resultsText = "Результати всіх учасників:\n";
             results.forEach(result => {
-                resultsText += `Ім'я: ${result.name}, Результат: ${result.score} з 10\n`;
+                resultsText += `Ім'я: ${result.name}, Результат: ${result.score} з 15\n`;
             });
             alert(resultsText);
         }
