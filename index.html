@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вікторина: Основи Менеджменту та SWOT-Аналіз</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #f0f8ff; }
+        .quiz-container { max-width: 600px; margin: 50px auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; background-color: #ffffff; }
+        .question { font-size: 18px; margin-bottom: 20px; }
+        .options { list-style-type: none; padding: 0; }
+        .options li { margin: 10px 0; }
+        button { font-size: 16px; padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background-color: #45a049; }
+        .result { font-size: 20px; font-weight: bold; margin-top: 20px; }
+        .correct { color: green; font-weight: bold; }
+        .incorrect { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Вікторина: Основи Менеджменту та SWOT-Аналіз</h1>
+
+        <!-- Форма для ввода имени -->
+        <div id="name-entry">
+            <p>Введіть своє ім'я перед початком тесту:</p>
+            <input type="text" id="participant-name" placeholder="Ваше ім'я">
+            <button onclick="startQuiz()">Почати тест</button>
+        </div>
+
+        <!-- Контейнер для викторины -->
+        <div id="quiz-container" style="display: none;">
+            <div class="question-container">
+
+                <!-- Вопросы викторины -->
+                <div class="question">1. Яке основне завдання менеджменту в компанії?</div>
+                <ul class="options">
+                    <li><input type="radio" name="q1" value="0"> Створювати багато правил</li>
+                    <li><input type="radio" name="q1" value="1"> Планування, організація, мотивація, контроль</li>
+                    <li><input type="radio" name="q1" value="0"> Контроль за кожним кроком співробітників</li>
+                </ul>
+
+                <div class="question">2. Що означає SWOT у SWOT-аналізі?</div>
+                <ul class="options">
+                    <li><input type="radio" name="q2" value="0"> Спостереження, вивчення, аналіз</li>
+                    <li><input type="radio" name="q2" value="1"> Сильні та слабкі сторони, можливості, загрози</li>
+                    <li><input type="radio" name="q2" value="0"> Систематичне вивчення внутрішніх факторів</li>
+                </ul>
+
+                <div class="question">3. Що означає "W" у SWOT?</div>
+                <ul class="options">
+                    <li><input type="radio" name="q3" value="1"> Слабкі сторони</li>
+                    <li><input type="radio" name="q3" value="0"> Вікно можливостей</li>
+                    <li><input type="radio" name="q3" value="0"> Впливові чинники</li>
+                </ul>
+
+                <div class="question">4. Як менеджер мотивує команду досягати цілей?</div>
+                <ul class="options">
+                    <li><input type="radio" name="q4" value="0"> Ділить всі складні завдання на нескінченні дедлайни</li>
+                    <li><input type="radio" name="q4" value="1"> Надихає, ставить цілі, дає зворотний зв'язок</li>
+                    <li><input type="radio" name="q4" value="0"> Пропонує команді багато кави</li>
+                </ul>
+
+                <div class="question">5. Які фактори охоплює SWOT-аналіз?</div>
+                <ul class="options">
+                    <li><input type="radio" name="q5" value="0"> Лише внутрішні фактори</li>
+                    <li><input type="radio" name="q5" value="1"> Внутрішні та зовнішні фактори</li>
+                    <li><input type="radio" name="q5" value="0"> Лише зовнішні фактори</li>
+                </ul>
+
+                <div class="question">6. Який з цих пунктів є можливістю у SWOT-аналізі?</div>
+                <ul class="options">
+                    <li><input type="radio" name="q6" value="0"> Висока конкуренція</li>
+                    <li><input type="radio" name="q6" value="1"> Новий ринок для розширення</li>
+                    <li><input type="radio" name="q6" value="0"> Старе обладнання</li>
+                </ul>
+
+                <div class="question">7. Що з цього допомагає виявити сильні сторони компанії?</div>
+                <ul class="options">
+                    <li><input type="radio" name="q7" value="1"> Досвід і навички співробітників</li>
+                    <li><input type="radio" name="q7" value="0"> Погана комунікація</li>
+                    <li><input type="radio" name="q7" value="0"> Відсутність стратегії</li>
+                </ul>
+
+                <div class="question">8. Що означає "S" у SWOT?</div>
+                <ul class="options">
+                    <li><input type="radio" name="q8" value="1"> Сильні сторони</li>
+                    <li><input type="radio" name="q8" value="0"> Слабкі місця</li>
+                    <li><input type="radio" name="q8" value="0"> Стратегія</li>
+                </ul>
+
+                <div class="question">9. Що з перерахованого є загрозою для компанії?</div>
+                <ul class="options">
+                    <li><input type="radio" name="q9" value="0"> Сильні сторони співробітників</li>
+                    <li><input type="radio" name="q9" value="0"> Нова лінійка продуктів</li>
+                    <li><input type="radio" name="q9" value="1"> Посилення конкурентів</li>
+                </ul>
+
+                <div class="question">10. Як ви опишете ідеального менеджера?</div>
+                <ul class="options">
+                    <li><input type="radio" name="q10" value="1"> Надихаючий лідер, який підтримує команду</li>
+                    <li><input type="radio" name="q10" value="0"> Контролює кожен крок співробітників</li>
+                    <li><input type="radio" name="q10" value="0"> Не звертає увагу на проблеми команди</li>
+                </ul>
+
+                <button onclick="submitQuiz()">Завершити тест</button>
+                <div class="result" id="result"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const correctAnswers = {
+            q1: "1",
+            q2: "1",
+            q3: "1",
+            q4: "1",
+            q5: "1",
+            q6: "1",
+            q7: "1",
+            q8: "1",
+            q9: "1",
+            q10: "1"
+        };
+
+        function startQuiz() {
+            const name = document.getElementById("participant-name").value.trim();
+            if (!name) {
+                alert("Будь ласка, введіть своє ім'я!");
+                return;
+            }
+            document.getElementById("name-entry").style.display = "none";
+            document.getElementById("quiz-container").style.display = "block";
+            sessionStorage.setItem("participantName", name);
+        }
+
+        function submitQuiz() {
+            let score = 0;
+            const questions = document.querySelectorAll('.question-container .question');
+            const name = sessionStorage.getItem("participantName");
+
+            for (let i = 0; i < questions.length; i++) {
+                const questionName = "q" + (i + 1);
+                const selectedOption = document.querySelector(`input[name="${questionName}"]:checked`);
+                const options = document.querySelectorAll(`input[name="${questionName}"]`);
+
+                if (selectedOption) {
+                    if (selectedOption.value === correctAnswers[questionName]) {
+                        score++;
+                        selectedOption.parentElement.classList.add('correct');
+                    } else {
+                        selectedOption.parentElement.classList.add('incorrect');
+                        options.forEach(option => {
+                            if (option.value === correctAnswers[questionName]) {
+                                option.parentElement.classList.add('correct');
+                            }
+                        });
+                    }
+                }
+            }
+
+            const results = JSON.parse(localStorage.getItem("quizResults") || "[]");
+            results.push({ name, score });
+            localStorage.setItem("quizResults", JSON.stringify(results));
+
+            document.getElementById('result').innerText = `Ваш результат: ${score} з 10`;
+        }
+
+        function showAllResults() {
+            const results = JSON.parse(localStorage.getItem("quizResults") || "[]");
+            let resultsText = "Результати всіх учасників:\n";
+            results.forEach(result => {
+                resultsText += `Ім'я: ${result.name}, Результат: ${result.score} з 10\n`;
+            });
+            alert(resultsText);
+        }
+    </script>
+
+    <button onclick="showAllResults()">Показати всі результати</button>
+</body>
+</html>
